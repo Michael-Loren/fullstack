@@ -18,7 +18,7 @@ function onSubmit(e){
           <option value="Pasta">Pasta</option>
           <option value="Pasta">Pasta</option>
         </select>
-        <button type="submit" onSubmit={(e) => {onSubmit}}>Place order</button>
+        <button type="submit" onSubmit={(e) => onSubmit}>Place order</button>
       </form>
     </div>
   );
