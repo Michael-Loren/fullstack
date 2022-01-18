@@ -21,6 +21,7 @@ export default function Employee() {
         method: "DELETE",
       });
       console.log(response);
+      window.location.reload();
     } catch (err) {
       console.error(err.message);
     }

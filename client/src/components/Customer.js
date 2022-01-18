@@ -10,10 +10,9 @@ export default function Customer() {
   async function onSubmit(e) {
     e.preventDefault(); //remove later
     try {
-      console.log(currentOption)
       const order = {description: currentOption}
-      if (order) {
-        console.log(Object.keys(order));
+      if (order && currentOption) {
+        console.log("Option:", order);
         const response = await fetch("http://localhost:5000/todos/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
