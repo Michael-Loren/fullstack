@@ -10,7 +10,7 @@ export default function Customer() {
   async function onSubmit(e) {
     e.preventDefault(); //remove later
     try {
-      const order = {description: currentOption}
+      const order = { description: currentOption };
       if (order && currentOption) {
         console.log("Option:", order);
         const response = await fetch("http://localhost:5000/todos/", {
@@ -19,14 +19,13 @@ export default function Customer() {
           body: JSON.stringify(order),
         });
         console.log(response);
-        
 
         alert("order has been placed!");
       } else {
         alert("Select an order");
       }
     } catch (error) {
-      console.error(error.message)
+      console.error(error.message);
     }
   }
   return (
@@ -43,7 +42,7 @@ export default function Customer() {
             Garden mushrooms (you are liable)
           </option>
           <option value="Food">Food</option>
-          <option value="Cardboard">Cardboard + salt</option>
+          <option value="Cardboard + salt">Cardboard + salt</option>
         </select>
         <button type="submit">Place order</button>
       </form>

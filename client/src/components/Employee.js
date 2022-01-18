@@ -21,6 +21,7 @@ export default function Employee() {
         method: "DELETE",
       });
       console.log(response);
+      alert("Order complete!");
       window.location.reload();
     } catch (err) {
       console.error(err.message);
@@ -32,25 +33,24 @@ export default function Employee() {
       <table>
         <thead>
           <tr>
+            <th>ID</th>
             <th>Order</th>
+            <th>Complete</th>
           </tr>
         </thead>
         <tbody>
           {currentData.map((data) => {
             return (
               <tr key={data.todo_id}>
-                <td>
-                  {data.description === "Cardboard"
-                    ? "Cardboard + salt"
-                    : data.description}
-                </td>
+                <td>{data.todo_id}</td>
+                <td>{data.description}</td>
                 <td>
                   <button
                     onClick={() => {
                       onClick(data.todo_id);
                     }}
                   >
-                    X 
+                    X
                   </button>
                 </td>
               </tr>
